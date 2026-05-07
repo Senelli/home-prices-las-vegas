@@ -1,4 +1,4 @@
-const url = 'https://home-prices-las-vegas.onrender.com';
+const url = 'https://home-prices-las-vegas.onrender.com/get_city_zipcodes';
 // use d3 to fetch data from JSON
 d3.json(url).then(function(data){
     console.log(data);
