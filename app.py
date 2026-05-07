@@ -9,7 +9,6 @@ import datetime as dt
 app = Flask(__name__)
 CORS(app)
 
-# Reads from environment variables (set these in Streamlit Secrets or your hosting platform)
 host     = os.environ.get("DB_HOST")
 user     = os.environ.get("DB_USER")
 password = os.environ.get("DB_PASSWORD")
@@ -30,7 +29,6 @@ class home_values(db.Model):
     zipcode = db.Column(db.Integer, db.ForeignKey('city_zipcodes.zipcode'), nullable=False)
     Date    = db.Column(db.Date, nullable=False)
     value   = db.Column(db.Numeric, primary_key=True)
-
 
 @app.route('/get_city_zipcodes')
 def get_city_zipcodes():
@@ -72,7 +70,6 @@ def get_city_zipcodes():
         })
 
     return jsonify(list(nested_results.values()))
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=False)
