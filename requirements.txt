@@ -1,4 +1,5 @@
-Flask
-Flask-SQLAlchemy
-Flask-CORS
-SQLAlchemy
+flask
+flask-cors
+flask-sqlalchemy
+psycopg2-binary
+sqlalchemy
